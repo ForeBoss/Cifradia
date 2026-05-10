@@ -1,0 +1,461 @@
+/* =====================================================
+   CIFRADIA BRAND OVERRIDES — sobre Unsiloed AI base
+===================================================== */
+
+/* ── Certificados label: forzar negro ── */
+#cifradia-cert-label { color: #000000 !important; }
+
+/* ── Announcement bar ── */
+#cifradia-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1rem;
+  width: 100%;
+  font-size: 13px;
+  font-weight: 600;
+  color: #000914;
+  text-align: center;
+  text-decoration: none;
+  background: linear-gradient(90deg, #50FFB1 0%, #17d98a 100%);
+  position: relative;
+  z-index: 9999;
+  font-family: 'General Sans', system-ui, sans-serif;
+  letter-spacing: 0.01em;
+}
+#cifradia-bar::before,
+#cifradia-bar::after {
+  content: "";
+  width: 4px;
+  height: 4px;
+  background: #000914;
+  display: inline-block;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+@media (max-width: 600px) {
+  #cifradia-bar::before,
+  #cifradia-bar::after { display: none; }
+}
+
+/* ── Reemplazar naranja YC → mint Cifradia ── */
+.text-\[\#F26522\] { color: #50FFB1 !important; }
+
+/* ── Logo: quitar el invert que hacía el logo blanco ── */
+img[src="/cifradia-logo.png"],
+img[alt="Cifradia — Consultoría TI"] {
+  filter: none !important;
+  height: 44px !important;
+  width: auto !important;
+}
+
+/* ── Botones CTA: borde y fondo Cifradia midnight ── */
+button.bg-\[\#191919\]:hover,
+a.bg-\[\#191919\]:hover {
+  background-color: #17d98a !important;
+  border-color: #17d98a !important;
+  color: #000914 !important;
+}
+
+/* ── Override inline bg naranja YC badge ── */
+.bg-\[\#F26522\] {
+  background-color: #50FFB1 !important;
+  color: #000914 !important;
+}
+
+/* ── Favicon override se hace desde JS ── */
+
+/* ── Ocultar el badge de YCombinator ── */
+.yc-badge-hide { display: none !important; }
+
+/* ── Accent verde Cifradia en hover de links de nav ── */
+header a:hover { color: #17d98a !important; }
+
+/* ── Hero heading: acento de color en segunda línea ── */
+.cifradia-accent { color: #17d98a; }
+
+/* ── Ajuste fino del logo en la navbar ── */
+.cifradia-logo-img {
+  height: 36px !important;
+  width: auto !important;
+  filter: none !important;
+  object-fit: contain;
+}
+
+.navbar-dash-march .cifradia-logo-img {
+  height: 44px !important;
+}
+
+@media (min-width: 1024px) {
+  .navbar-dash-march > div {
+    position: relative;
+    display: flex !important;
+    min-height: 72px;
+    align-items: center;
+    justify-content: center !important;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .navbar-dash-march > div > a:first-child,
+  .navbar-dash-march > div > div:last-of-type {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .navbar-dash-march > div > a:first-child {
+    left: 40px;
+  }
+
+  .navbar-dash-march > div > nav {
+    position: static !important;
+    left: auto !important;
+    right: auto !important;
+    translate: none !important;
+    transform: none !important;
+    margin: 0 auto;
+    white-space: nowrap;
+  }
+
+  .navbar-dash-march > div > div:last-of-type {
+    right: 40px;
+  }
+}
+
+/* ── Hero SVG: reemplazar rosa (#F861A8) → mint Cifradia ── */
+.hero-svg [fill="#F861A8"] { fill: #50FFB1 !important; }
+.hero-svg [stroke="#F861A8"] { stroke: #50FFB1 !important; }
+
+/* ── Hero SVG: naranja (#FC8108) → verde Cifradia ── */
+.hero-svg [fill="#FC8108"] { fill: #17d98a !important; }
+.hero-svg [stroke="#FC8108"] { stroke: #17d98a !important; }
+
+/* ── Benchmark/Pricing: rosa (#F861A8) → mint en toda la página ── */
+.text-\[\#F861A8\] { color: #50FFB1 !important; }
+.bg-\[\#F861A8\]  { background-color: #50FFB1 !important; color: #000914 !important; }
+[style*="color: rgb(248, 97, 168)"]       { color: #50FFB1 !important; }
+[style*="background-color: rgb(248, 97, 168)"] { background-color: #50FFB1 !important; color: #000914 !important; }
+[style*="border: 1px solid rgb(248, 97, 168)"] { border-color: #50FFB1 !important; }
+[style*="border-color: rgb(248, 97, 168)"]     { border-color: #50FFB1 !important; }
+
+/* ── Pricing plan border orange FC8108 → mint ── */
+[style*="border: 1px solid rgb(252, 129, 8)"]  { border-color: #17d98a !important; }
+
+/* ── Section eyebrow labels → mint Cifradia ── */
+[style*="letter-spacing: -0.32px"] { color: #17d98a !important; }
+/* ── Excepción: label EL RETO EMPRESARIAL → negro ── */
+.reto-empresarial-label[style*="letter-spacing: -0.32px"] { color: #191919 !important; }
+/* ── Excepción: label NUESTROS SERVICIOS → negro ── */
+.nuestros-servicios-label[style*="letter-spacing: -0.32px"] { color: #191919 !important; }
+/* ── Excepción: label CÓMO TRABAJAMOS → negro ── */
+.como-trabajamos-label[style*="letter-spacing: -0.32px"] { color: #191919 !important; }
+/* La altura dinámica del hero vive inline en su grid para no afectar otras secciones. */
+@media (max-width: 1023.98px) {
+  [style*="min-height: clamp(480px, calc(100vh - 108px), 700px)"] {
+    min-height: 0 !important;
+  }
+}
+
+/* ── Footer Cifradia: layout estable fuera del CSS compilado base ── */
+.cifradia-footer-grid {
+  display: flex !important;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 2.5rem;
+}
+
+.cifradia-footer-grid > div {
+  flex: 1 1 180px;
+  min-width: 0;
+}
+
+.cifradia-footer-brand {
+  flex: 1.45 1 280px !important;
+  max-width: 340px;
+}
+
+.cifradia-footer-logo {
+  display: block;
+  width: min(220px, 100%);
+  height: auto;
+}
+
+@media (max-width: 767.98px) {
+  .cifradia-footer-brand {
+    max-width: none;
+  }
+}
+
+/* ── Como trabajamos: metodologia de consultoria TI ── */
+.ct-method-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  align-items: start;
+  gap: 12px;
+}
+
+.ct-method-panel,
+.ct-method-panel-dark {
+  min-width: 0;
+}
+
+.ct-method-panel {
+  background: #ffffff;
+  border: 1px solid #e2e2e2;
+}
+
+.ct-method-panel-dark {
+  background: #191919;
+  border: 1px solid #191919;
+  color: #ffffff;
+}
+
+.ct-method-panel-inner {
+  padding: 20px;
+}
+
+.ct-method-kicker {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+  font-family: 'ABC Favorit Mono Unlicensed Trial', 'ABC Favorit Mono', ui-monospace, monospace;
+  font-size: 11px;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8f8f8f;
+}
+
+.ct-method-kicker-dark {
+  color: rgba(255, 255, 255, 0.58);
+}
+
+.ct-method-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.ct-method-row {
+  padding: 14px 0;
+  border-top: 1px solid #ececec;
+}
+
+.ct-method-row:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+
+.ct-method-row-title {
+  display: block;
+  font-family: 'ABC Favorit Mono Unlicensed Trial', 'ABC Favorit Mono', ui-monospace, monospace;
+  font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #191919;
+}
+
+.ct-method-row-copy {
+  margin: 6px 0 0;
+  font-family: 'General Sans', system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #5a5a5a;
+}
+
+.ct-method-note-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ct-method-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.ct-method-note-index {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  flex: 0 0 26px;
+  border: 1px solid rgba(80, 255, 177, 0.35);
+  background: rgba(80, 255, 177, 0.12);
+  color: #50ffb1;
+  font-family: 'ABC Favorit Mono Unlicensed Trial', 'ABC Favorit Mono', ui-monospace, monospace;
+  font-size: 11px;
+  line-height: 1;
+}
+
+.ct-method-note-copy {
+  margin: 0;
+  font-family: 'General Sans', system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #ffffff;
+}
+
+.ct-method-criteria {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.ct-method-criterion {
+  border: 1px solid #e2e2e2;
+  background: #ffffff;
+  padding: 14px;
+}
+
+.ct-method-criterion-title {
+  display: block;
+  font-family: 'ABC Favorit Mono Unlicensed Trial', 'ABC Favorit Mono', ui-monospace, monospace;
+  font-size: 11px;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #191919;
+}
+
+.ct-method-criterion-copy {
+  margin: 8px 0 0;
+  font-family: 'General Sans', system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #5a5a5a;
+}
+
+.ct-method-route {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ct-method-route-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid #e2e2e2;
+  background: #ffffff;
+}
+
+.ct-method-route-index {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  font-family: 'ABC Favorit Mono Unlicensed Trial', 'ABC Favorit Mono', ui-monospace, monospace;
+  font-size: 11px;
+  line-height: 1;
+}
+
+.ct-method-route-index.is-accent {
+  background: #50ffb1;
+  border: 1px solid #50ffb1;
+  color: #000914;
+}
+
+.ct-method-route-index.is-warm {
+  background: rgba(252, 129, 8, 0.12);
+  border: 1px solid rgba(252, 129, 8, 0.3);
+  color: #fc8108;
+}
+
+.ct-method-route-index.is-muted {
+  background: #f0f0f0;
+  border: 1px solid #e2e2e2;
+  color: #8f8f8f;
+}
+
+.ct-method-route-title {
+  display: block;
+  font-family: 'General Sans', system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: #191919;
+}
+
+.ct-method-route-meta {
+  display: block;
+  margin-top: 4px;
+  font-family: 'ABC Favorit Mono Unlicensed Trial', 'ABC Favorit Mono', ui-monospace, monospace;
+  font-size: 11px;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8f8f8f;
+}
+
+.ct-method-route-description {
+  margin: 6px 0 0;
+  font-family: 'General Sans', system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #5a5a5a;
+}
+
+.ct-method-stats {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.ct-method-stat {
+  border: 1px solid #e2e2e2;
+  background: #ffffff;
+  padding: 14px;
+}
+
+.ct-method-stat-title {
+  display: block;
+  font-family: 'ABC Favorit Mono Unlicensed Trial', 'ABC Favorit Mono', ui-monospace, monospace;
+  font-size: 11px;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8f8f8f;
+}
+
+.ct-method-stat-value {
+  margin: 8px 0 0;
+  font-family: 'General Sans', system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #191919;
+}
+
+@media (max-width: 1023.98px) {
+  .ct-method-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .ct-method-panel-inner {
+    padding: 16px;
+  }
+
+  .ct-method-criteria,
+  .ct-method-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .ct-method-route-step {
+    padding: 12px;
+  }
+}
